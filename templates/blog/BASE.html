@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block style %}{% endblock %}
+    <link rel="shortcut icon" href="{% static 'assets/icons/icon_projects.png' %}" type="image/x-icon">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header>{% include 'blog/partials/_header.html' %}</header>
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
+    <main>{% block content %}{% endblock %}</main>
+    
+   <footer>{% include 'blog/partials/_footer.html' %}</footer>
+</body>
+</html>

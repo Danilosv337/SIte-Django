@@ -1,0 +1,21 @@
+{% extends 'blog/BASE.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/blog/projects.css' %}">
+<link rel="stylesheet" href="{% static 'css/blog/project.css' %}">
+ {% endblock %}
+{% block title %}{{projeto.nome}}{% endblock %}
+{% block content %}
+<div class="block-content">
+    <div class="block-project" >
+        <h2>{{projeto.nome}}</h2>
+        {% if projeto.imagem == '' or projeto.imagem == null %}
+            <img src="{% static 'img/not_found.png' %}" alt="">
+        {% else %}
+            <img src="{{projeto.imagem.url}}" alt="">
+        {% endif %}
+        <p>{{projeto.descricao}}</p>
+        <a href="{{ projeto.link }}">Ir Para Projeto</a>
+    </div>
+</div>
+{% endblock %}

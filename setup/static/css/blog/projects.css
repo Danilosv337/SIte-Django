@@ -1,0 +1,46 @@
+
+.block-project{
+    display: inline-block;
+    background-color: var(--main-menubg-color);
+    padding: 10px;
+    margin: 20px;
+    border-radius: 10px;
+}
+.block-project img{
+    height: 200px;
+    width: 350px;
+
+}
+.block-project h3,p,a{
+   margin: 1.3rem 0;
+}
+
+.block-project a{
+    text-decoration: none;
+    background-color: var(--main-bg-color);
+    padding: 10px;
+    color: white;
+    border-radius: 7px;
+}
+.block-project a:hover{
+    opacity: 0.8;
+    font-size: 1.1rem;
+}
+
+
+@media screen and (max-width: 660px){
+    .block-project{
+        padding: 20px;
+    }
+    .block-project img{
+        height: 100px;
+        width: 125px;
+    
+    }
+    .block-project h3,p,a{
+        margin: 1rem 0;
+     }
+     .block-project p{
+        font-size: 0.8rem;
+     }
+}

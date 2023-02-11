@@ -1,0 +1,43 @@
+{% extends 'blog/BASE.html' %}
+{% load static %}
+{% block title %}Danilosv337 - Contato{% endblock %}
+{% block style %} <link rel="stylesheet" href="{% static 'css/blog/contact.css' %}"> {% endblock %}
+{% block content %}
+<div class="block-content page-contact">
+    <div  class="media-content">
+        <ul >
+            <li>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
+                <a target="_blank" href="https://github.com/danilosv337">Github</a>
+            </li>
+            <li>
+                <img src="https://cdn-icons-png.flaticon.com/512/1057/1057248.png" alt="">
+                <a target="_blank" href="https://www.instagram.com/danilosv337/">Instagram</a>
+            </li>
+            <li>
+                <img src="https://cdn-icons-png.flaticon.com/512/552/552486.png" alt="">
+                <a href="">Email</a>
+            </li>
+            <li>
+                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384178.png" alt="">
+                <a href="">Whats</a>
+            </li>
+        </ul>
+    </div>
+    <div class="form-content">
+        <fieldset>
+            <form action="" method="post">
+                {% csrf_token %}
+                <legend for="name" >Nome completo</legend>
+                <input type="text" name="name" id="name">
+                <legend>Email</legend>
+                <input type="email" name="" id="">
+                <legend>Mensagem</legend>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <br>
+                <input type="submit">
+            </form>
+        </fieldset>
+    </div>
+</div>
+{% endblock %}

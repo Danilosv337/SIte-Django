@@ -1,0 +1,46 @@
+
+.page-contact{
+    display: flex;
+}
+.media-content{
+    display: flex;
+    width: 50%;
+}
+
+.media-content ul img{
+    height: 20px
+}
+.media-content ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    list-style: none;
+}
+.media-content ul li {
+    margin: 20px 0;
+}
+.media-content ul li a{
+    font-size: 20px;
+    text-decoration: none;
+    color: var(--main-bg-color);
+}
+.form-content{
+    text-align: left;
+    width: 50%;
+}
+.form-content input[type=submit]{
+    cursor: pointer;
+    background-color: var(--main-menubg-color);
+    color: white;
+    width: 30%;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+.form-content input[type=submit]:hover{
+    opacity: 0.9;
+}
+.form-content fieldset{
+    border: none;
+}

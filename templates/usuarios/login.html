@@ -1,0 +1,17 @@
+{% extends 'blog/BASE.html' %}
+{% load static %}
+{% block style %}<link rel="stylesheet" href="{% static 'css/usuarios/users.css' %}"> {% endblock %}
+{% block content %}
+<section class="login-register">
+    <form action="" method="POST">
+        {% csrf_token %} 
+        {% for field in form.visible_fields %}
+        <div >
+            <label for="{{ field.id_for_label }}">{{field.label}}</label>
+            {{field}}
+        </div>
+        {% endfor %}
+        <button type="submit">Login</button>
+    </form>
+</section> 
+{% endblock %}

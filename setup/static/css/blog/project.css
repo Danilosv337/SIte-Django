@@ -1,0 +1,12 @@
+.block-project{
+    padding: 30px;
+}
+.block-project img{
+    height: auto;
+    width: auto;
+    max-width: 70%;
+}
+
+.block-project h2,p{
+    margin: 30px auto;
+}

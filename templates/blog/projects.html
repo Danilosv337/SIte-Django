@@ -1,0 +1,27 @@
+{% extends 'blog/BASE.html' %}
+{% load static %}
+{% block style %} <link rel="stylesheet" href="{% static 'css/blog/projects.css' %}">{% endblock %}
+{% block title %}Danilosv337 - Projetos{% endblock %}
+{% block content %}
+<div class="block-content">
+    <h2>Projetos</h2>
+    <p>Alguns projetos em desenvolvimento ou em produção.</p>
+    {% if Projetos %}
+    {% for projeto in Projetos %}
+    <div class="block-project">
+        <h3>{{projeto.nome}}</h3>
+        <a href="{% url 'project' projeto.id %}">
+            {% if projeto.imagem == '' or projeto.imagem == null %}
+            <img src="{% static 'img/not_found.png' %}" alt="">
+            {% else %}
+            <img src="{{projeto.imagem.url}}" alt="">
+            {% endif %}
+        </a>
+        <p>{{projeto.legenda}}</p>
+        <a target="_blank" href="{{projeto.link_projeto}}">Ir Para Projeto</a>
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
+
+{% endblock %}

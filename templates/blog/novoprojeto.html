@@ -1,0 +1,15 @@
+{% extends 'blog/BASE.html' %}
+{% block content %}
+<div class="block-content">
+    <form action="{% url 'novoprojeto' %}" method="POST">
+        {% csrf_token %} 
+        {% for field in form.visible_fields %}
+        <div >
+            <label for="{{ field.id_for_label }}">{{field.label}}</label>
+            {{field}}
+        </div>
+        {% endfor %}
+        <button type="submit">Enviar Projeto</button>
+    </form>
+</div>
+{% endblock %}
