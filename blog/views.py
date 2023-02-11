@@ -7,19 +7,19 @@ from blog.models import Projetos
 
 
 def index(request):
-
     return render(request,'blog/index.html')
+
 def projects(request):
     projetos = Projetos.objects.all()
- 
-    
     return render(request,'blog/projects.html',{'Projetos': projetos})
+
 def contact(request):
     return render(request,'blog/contact.html')
 
 def project(request,projeto_id):
     projeto = get_object_or_404(Projetos,pk=projeto_id)
     return render(request,'blog/project.html',{'projeto':projeto})
+    
 @permission_required('blog.add_projeto',raise_exception=False,login_url='login')
 def novoprojeto(request):
     forms = New_projectforms()
