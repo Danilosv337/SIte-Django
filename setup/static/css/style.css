@@ -99,6 +99,13 @@ main{
     background-color: rgb(247, 230, 145);
     color: rgb(192,152,83);
 }
+.info{
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    background-color: rgb(204, 252, 255);
+    color: rgb(62, 204, 214);
+}
 
 /* Footer */
 .footer{

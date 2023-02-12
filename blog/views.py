@@ -19,25 +19,17 @@ def contact(request):
 def project(request,projeto_id):
     projeto = get_object_or_404(Projetos,pk=projeto_id)
     return render(request,'blog/project.html',{'projeto':projeto})
-    
+
 @permission_required('blog.add_projeto',raise_exception=False,login_url='login')
 def novoprojeto(request):
-    forms = New_projectforms()
-    if request.method == 'POST':
-        messages.warning(request,'teste')
-        projetos = New_projectforms(request.POST)
-        if projetos.is_valid():
-            try:
-                novo_projeto = Projetos(
-                nome = projetos['project_name'].value(),
-                imagem = projetos['project_img'].value(),
-                legenda = projetos['project_legend'].value(),
-                descricao = projetos['project_descricao'].value(),
-                link_projeto = projetos['project_link'].value(),
-
-                )
-                novo_projeto.save()
-                messages.success(request,'Projeto Adicionado!')
-            except Exception as erro:
-                messages.error(request,f'Ocorreu Um Erro! {erro}')
-    return render(request,'blog/novoprojeto.html',{'form':forms})
+    if request.method != 'POST':
+        form = New_projectforms()
+        return render(request,'blog/novoprojeto.html',{'form': form})
+    form = New_projectforms(request.POST,request.FILES)
+    if form.is_valid():
+        form.save()
+        messages.success(request,'Projeto adicionado')
+        return render(request,'blog/novoprojeto.html',{'form': form})
+    else:
+        messages.error(request,'Projeto não valido!')
+        return render(request,'blog/novoprojeto.html',{'form': form})
