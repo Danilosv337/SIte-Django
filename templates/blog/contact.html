@@ -20,20 +20,20 @@
             </li>
             <li>
                 <img src="https://cdn-icons-png.flaticon.com/512/1384/1384178.png" alt="">
-                <a href="">Whats</a>
+                <a href="https://web.whatsapp.com/send/?phone=5579998383357">Whats</a>
             </li>
         </ul>
     </div>
     <div class="form-content">
         <fieldset>
-            <form action="" method="post">
+            <form action="" method="POST">
                 {% csrf_token %}
                 <legend for="name" >Nome completo</legend>
-                <input type="text" name="name" id="name">
+                <input type="text" name="full_name" id="name">
                 <legend>Email</legend>
-                <input type="email" name="" id="">
+                <input type="email" name="email" id="">
                 <legend>Mensagem</legend>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <textarea name="mensagem" id="" cols="30" rows="10"></textarea>
                 <br>
                 <input type="submit">
             </form>

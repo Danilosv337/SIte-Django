@@ -29,6 +29,11 @@
     text-align: left;
     width: 50%;
 }
+.form-content input,textarea{
+    padding: 5px;
+    color: var(--main-menubg-color);
+}
+
 .form-content input[type=submit]{
     cursor: pointer;
     background-color: var(--main-menubg-color);

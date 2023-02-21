@@ -1,10 +1,11 @@
 from django.shortcuts import render,redirect,get_object_or_404,HttpResponse
 from django.contrib.auth.decorators import login_required,permission_required
+from utils.pythonmail.main import *
 from django.contrib import messages
 from blog.forms import New_projectforms
 from blog.models import Projetos
 
-
+sendmail = Email()
 
 def index(request):
     return render(request,'blog/index.html')
@@ -14,7 +15,28 @@ def projects(request):
     return render(request,'blog/projects.html',{'Projetos': projetos})
 
 def contact(request):
+    if request.method != 'POST':
+        return render(request,'blog/contact.html')
+    full_name = request.POST.get('full_name')
+    email = request.POST.get('email')
+    message = request.POST.get('mensagem')
+    try:
+        mensagem = (f'''
+        {full_name}
+        {email}
+
+        mandou a seguinte mensagem
+
+        {message}
+        '''
+        )
+        sendmail.send_email('Projeto SiteDjango',mensagem)
+        messages.success(request,'Mensagem Enviada!')
+    except Exception as erro:
+        messages.error(f'Ocorreu um erro {erro}')
     return render(request,'blog/contact.html')
+
+    
 
 def project(request,projeto_id):
     projeto = get_object_or_404(Projetos,pk=projeto_id)
