@@ -26,6 +26,11 @@ body{
 .main-user p{
     display: inline;
 }
+i#menu-burguer{
+    display: none;
+    color: white;
+}
+
 .main-menu ul{
     position: absolute;
     top: 10px;
@@ -117,7 +122,7 @@ main{
     padding-bottom: 20px;
 }
 
-@media screen and (max-width: 660px){
+@media screen and (max-width: 700px){
     .main-user{
         top: 15px;
         left: 15px;
@@ -125,12 +130,28 @@ main{
     .main-user p,a{
         font-size: 10px;
     }
+    i#menu-burguer{
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 40px;
+        cursor: pointer;
+    }
+    .main-menu ul{
+        margin-top: 30px;
+        display: none;
+    }
+    .main-menu li {
+        display: block;
+        background-color: var(--main-menubg-color);
+        padding: 10px;
+    }
     .main-menu li{
         font-size: 7px;
         padding-right: 5px;
     }
     .main-menu img{
-        padding-top: 10px;
+        padding-top: 15px;
         height: 10px;
     }
     .messages{

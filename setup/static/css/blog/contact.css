@@ -44,3 +44,9 @@
 .form-content fieldset{
     border: none;
 }
+
+@media screen and (max-width: 1000px){
+    .page-contact{display: block;}
+    .form-content{margin-top: 50px;}
+
+}

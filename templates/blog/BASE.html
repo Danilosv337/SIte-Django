@@ -22,6 +22,19 @@
     {% endif %}
     
     <main>{% block content %}{% endblock %}</main>
+
+
+
+    <script>
+        function menuClicked(){
+            if(itens.style.display == 'block'){
+                itens.style.display = 'none' 
+            }else{
+                itens.style.display = 'block'
+            }
+                 
+        }
+    </script>
     
    <footer>{% include 'blog/partials/_footer.html' %}</footer>
 </body>
