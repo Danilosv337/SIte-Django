@@ -1,7 +1,5 @@
 media
 Bibliotecas
-static/
-*static*
 # Byte-compiled / optimized / DLL files
 __pycache__/
 setup/__pycache__/*

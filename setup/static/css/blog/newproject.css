@@ -1,0 +1,47 @@
+.form-project{
+
+    width: 100%;
+}
+.form-project ul{
+    list-style: none;
+}
+.form-project label{
+    display: inline;
+    font-size: 1.5rem;
+}
+.form-project input{
+    padding: 5px;
+    margin: 20px 0;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: 0;
+
+}
+.form-project textarea{
+    padding: 5px;
+    margin: 20px 0;
+}
+.form-project input:focus{
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+.form-project input[type=file]{
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: var(--main-bg-color);
+    color: white;
+    
+}
+.form-project button{
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: var(--main-bg-color);
+    color: white;
+}
+.form-project button:hover{
+    opacity: 0.9;
+}
