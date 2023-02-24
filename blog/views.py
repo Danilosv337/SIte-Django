@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect,get_object_or_404,HttpResponse
 from django.contrib.auth.decorators import login_required,permission_required
-from utils.pythonmail.main import *
+from utils.pythonmail import *
 from django.contrib import messages
 from blog.forms import New_projectforms
 from blog.models import Projetos

@@ -19,7 +19,6 @@ def login(request):
         if usuario is not None:
             auth.login(request,usuario)
             messages.success(request,'Login Bem Sucedido')
-            messages.warning(request,'teste2')
             return redirect('index')
         else:
             messages.error(request,'Usuário ou senha inválidos!')
