@@ -16,6 +16,9 @@
             <li><a href="{% url 'index' %}"> <img src="{% static 'assets/icons/icon_home.png' %}" alt=""> Inicio</a></li>
             <li><a href="{% url 'projects' %}"><img src="{% static 'assets/icons/icon_projects.png' %}" alt=""> Projetos</a></li>
             <li><a href="{% url 'contact' %}"><img src="{% static 'assets/icons/icon_contact.png' %}" alt=""> Contato</a></li>
+            {% if user.is_staff %}
+                <li><a href="{% url 'novoprojeto' %}"><img src="{% static 'assets/icons/icon_contact.png' %}" alt=""> novo projeto</a></li>
+            {% endif %}
         </ul>
     </nav>
 </div>
