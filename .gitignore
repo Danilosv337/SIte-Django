@@ -1,5 +1,7 @@
 media
 Bibliotecas
+db.sqlite3
+.gitignore
 # Byte-compiled / optimized / DLL files
 __pycache__/
 setup/__pycache__/*

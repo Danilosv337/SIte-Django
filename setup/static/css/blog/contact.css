@@ -30,13 +30,15 @@
     width: 50%;
 }
 .form-content input,textarea{
-    padding: 5px;
+    padding: 7px;
     color: var(--main-menubg-color);
 }
 
 .form-content input[type=submit]{
     cursor: pointer;
-    background-color: var(--main-menubg-color);
+    background-color: var(--main-bg-color);
+    text-transform: uppercase;
+    font-weight: bold;
     color: white;
     width: 30%;
     padding: 10px;

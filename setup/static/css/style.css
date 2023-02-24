@@ -71,6 +71,7 @@ main{
     margin: 50px 0;
     padding: 50px;
     background-color: white;
+    text-shadow: 1px 1px 1px var(--main-menubg-color);
     color:  var(--main-bg-color);
     text-align: center;
     line-height: 1.8rem;
