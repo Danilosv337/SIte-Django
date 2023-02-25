@@ -21,16 +21,7 @@ def contact(request):
     email = request.POST.get('email')
     message = request.POST.get('mensagem')
     try:
-        mensagem = (f'''
-        {full_name}
-        {email}
-
-        mandou a seguinte mensagem
-
-        {message}
-        '''
-        )
-        sendmail.send_email('Projeto SiteDjango',mensagem)
+        sendmail.send_email('Projeto SiteDjango',referencia1=full_name,referencia2=email,mensagem=message)
         messages.success(request,'Mensagem Enviada!')
     except Exception as erro:
         messages.error(f'Ocorreu um erro {erro}')
