@@ -45,3 +45,9 @@
 .form-project button:hover{
     opacity: 0.9;
 }
+
+@media screen and (max-width: 600px){
+    .form-project input,textarea{
+        width: 100%;
+    }
+}
