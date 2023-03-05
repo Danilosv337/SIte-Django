@@ -3,8 +3,8 @@ Bibliotecas
 db.sqlite3
 .gitignore
 # Byte-compiled / optimized / DLL files
-__pycache__/
-setup/__pycache__/*
+__pycache__
+setup/__pycache__/
 *.py[cod]
 *$py.class
 
